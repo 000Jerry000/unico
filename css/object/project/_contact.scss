@@ -1,0 +1,359 @@
+@use "../../foundation/var";
+
+.p-form {
+	margin: 0 auto 4.2rem;
+	border-spacing: 0 1.5rem;
+	border-collapse: separate;
+	@include var.mq-max(767px) {
+		width: 100%;
+		margin: 0 auto 3.2rem;
+		border-spacing: 0 1.8rem;
+	}
+
+	&__head {
+		width: 25.4rem;
+		@include var.mq-max(767px) {
+			width: 100%;
+			display: block;
+		}
+		&--pb {
+			padding-bottom: 3.0rem;
+			@include var.mq-max(767px) {
+				padding-bottom: 0;
+			}
+		}
+
+		p {
+			margin: 0;
+			padding: 1.2rem 2.0rem;
+			border: 1px solid #FFF;
+			@include var.mq-max(767px) {
+				padding: .8rem 1.0rem;
+			}
+			&.p-form__head-caption {
+				padding: 0 2.0rem;
+				@include var.mq-max(767px) {
+					padding: 0 1.0rem;
+				}
+				&:last-child {
+					@include var.mq-max(767px) {
+						padding: 0 1.0rem 1.0rem;
+					}
+				}
+			}
+		}
+
+		&--textarea {
+			p {
+				@include var.mq-max(767px) {
+					padding: .8rem 1.0rem 0;
+				}
+			}
+		}
+
+		&-must {
+			margin-left: 1.2rem;
+			padding: .2rem .5rem;
+			background-color: var.$color-pink;
+			border-radius: 4px;
+			color: #FFF;
+			font-size: 1.0rem;
+		}
+
+		&-caption {
+			padding: 0;
+			font-size: 1.2rem;
+			font-weight: normal;
+		}
+	}
+
+	&__data {
+		vertical-align: middle;
+		@include var.mq-max(767px) {
+			width: 100%;
+			display: block;
+		}
+		&--pb {
+			padding-bottom: 3.0rem;
+		}
+
+		&-select {
+			width: fit-content;
+			position: relative;
+			@include var.mq-max(767px) {
+				width: 100%;
+			}
+			&--input {
+				&::before {
+					content: '';
+					width: 1.2rem;
+					height: 1.2rem;
+					background-color: #CDD6DE;
+					border-radius: 50%;
+					position: absolute;
+					top: 1.8rem;
+					right: 1.6rem;
+				}
+				&::after {
+					content: '';
+					width: .4rem;
+					height: .4rem;
+					border-top: 1.5px solid #FFF;
+					border-right: 1.5px solid #FFF;
+					position: absolute;
+					top: 2.1rem;
+					right: 2.0rem;
+					transform: rotate(135deg);
+				}
+			}
+		}
+
+		p {
+			margin: 0;
+		}
+
+		input {
+			padding: 1.2rem;
+			border: 1px solid #CDD6DD;
+			@include var.mq-max(767px) {
+				width: 100%;
+			}
+
+			&[type='text'],
+			&[type='email'],
+			&[type='date'] {
+				min-width: 40.0rem;
+				&::placeholder {
+					color: #CDD6DD;
+				}
+				@include var.mq-max(767px) {
+					min-width: auto;
+				}
+			}
+
+			&[type='date'] {
+				padding: 1.2rem;
+				text-align: left;
+				position: relative;
+				cursor: pointer;
+				&.is-init {
+					min-height: 5.0rem;
+					padding: 1.2rem 1.2rem 1.2rem calc(1.2rem + 2.5rem + 1.2rem);
+					color: #CDD6DD;
+				}
+				&.is-init::after {
+					content: '';
+					width: 2.5rem;
+					height: 2.6rem;
+					background: url(../img/icon/calendar.svg) no-repeat center center / contain;
+					position: absolute;
+					top: 50%;
+					left: 1.2rem;
+					transform: translateY(-50%);
+					pointer-events: none;
+				}
+				&::-webkit-calendar-picker-indicator {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					opacity: 0;
+					top: 0;
+					left: 0;
+					cursor: pointer;
+				}
+			}
+
+			&[type='radio'] {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				@include var.mq-max(767px) {
+					width: auto;
+				}
+				&+span {
+					position: relative;
+					&::before {
+						content: '';
+						width: 3.0rem;
+						height: 3.0rem;
+						border: 1px solid #CDD6DD;
+						border-radius: 50%;
+						position: absolute;
+						top: 50%;
+						left: -4.0rem;
+						transform: translateY(-50%);
+					}
+				}
+				&:checked+span {
+					&::after {
+						content: '';
+						width: 1.8rem;
+						height: 1.8rem;
+						background-color: var.$color-green;
+						border-radius: 50%;
+						position: absolute;
+						top: 50%;
+						left: -3.4rem;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+
+		select {
+			min-width: 40.0rem;
+			padding: 1.2rem;
+			border: 1px solid #CDD6DD;
+			cursor: pointer;
+			@include var.mq-max(767px) {
+				width: 100%;
+				min-width: auto;
+			}
+		}
+
+		textarea {
+			min-width: 40.0rem;
+			padding: 1.2rem;
+			border: 1px solid #CDD6DD;
+			&::placeholder {
+				color: #CDD6DD;
+			}
+			@include var.mq-max(767px) {
+				width: 100%;
+				min-width: auto;
+			}
+		}
+
+		.wpcf7-radio {
+			margin-left: 4.0rem;
+			margin-bottom: .3rem;
+			display: flex;
+			flex-direction: column;
+			gap: 2.0rem 0;
+		}
+
+		.wpcf7-not-valid-tip {
+			padding-left: 1.2rem;
+		}
+	}
+}
+
+p.p-checkbox {
+	width: fit-content;
+	margin: 0 auto;
+	text-align: center;
+
+	input[type='checkbox'] {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		&+span {
+			position: relative;
+			&::before {
+				content: '';
+				width: 3.0rem;
+				height: 3.0rem;
+				border: 1px solid #CDD6DD;
+				position: absolute;
+				top: 50%;
+				left: -2.5rem;
+				transform: translateY(-50%);
+			}
+		}
+		&:checked+span {
+			&::after {
+				content: '';
+				width: 1.6rem;
+				height: 1.6rem;
+				background: url(../img/icon/check.svg) no-repeat center center / contain;
+				position: absolute;
+				top: 50%;
+				left: -1.8rem;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	&--confirm {
+		position: relative;
+		&::before {
+			content: '';
+			width: 3.0rem;
+			height: 3.0rem;
+			border: 1px solid #CDD6DD;
+			position: absolute;
+			top: 50%;
+			left: -3.0rem;
+			transform: translateY(-50%);
+		}
+		&::after {
+			content: '';
+			width: 1.6rem;
+			height: 1.6rem;
+			background: url(../img/icon/check.svg) no-repeat center center / contain;
+			position: absolute;
+			top: 50%;
+			left: -2.3rem;
+			transform: translateY(-50%);
+		}
+	}
+
+	a {
+		padding-left: 1.0rem;
+		color: var.$color-letter;
+		text-decoration: underline;
+	}
+}
+
+p.p-submit {
+	margin: 3.0rem auto 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: .2rem 0;
+
+	input[type='submit'] {
+		width: 27.2rem;
+		padding: 1.2rem;
+		background-color: var.$color-green;
+		color: #FFF;
+		font-size: 1.6rem;
+		font-weight: bold;
+		letter-spacing: .3em;
+		transition: opacity .3s ease-out;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}
+
+p.p-back {
+	margin: 1.2rem auto 0;
+	text-align: center;
+
+	input[type='button'] {
+		width: 27.2rem;
+		padding: 1.2rem;
+		background-color: var.$color-gray;
+		color: #FFF;
+		font-size: 1.6rem;
+		font-weight: bold;
+		letter-spacing: .3em;
+		transition: opacity .3s ease-out;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}
+
+span.wpcf7-list-item {
+	margin-left: 0;
+}
+span.wpcf7-list-item-label {
+	cursor: pointer;
+}
+
+div.wpcf7-response-output {
+	display: none;
+}

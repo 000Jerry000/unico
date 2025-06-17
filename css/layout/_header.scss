@@ -1,0 +1,271 @@
+@use "../foundation/var";
+
+.l-header {
+	width: 100%;
+	padding: 0 3.2rem;
+	background-color: var.$color-main;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	box-shadow: 0 3px 6px #00000029;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	@include var.mq-max(970px) {
+		padding: 3.0rem 2.4rem .8rem;
+	}
+
+	&__logo {
+		margin-right: 2%;
+		display: block;
+		@include var.mq-max(970px) {
+			margin-right: 0;
+		}
+
+		&-img {
+			width: 10.8rem;
+			display: block;
+			@include var.mq-max(600px) {
+				width: 8.0rem;
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		gap: 0 2.7rem;
+		@include var.mq-max(970px) {
+			display: none;
+		}
+
+		&-item {
+			padding-right: 2.7rem;
+			border-right: 1px solid var.$color-letter;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px 0;
+			cursor: pointer;
+			&:last-child {
+				padding-right: 0;
+				border-right: none;
+			}
+
+			a {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 6px 0;
+			}
+
+			&-text {
+				font-weight: bold;
+				letter-spacing: .2em;
+
+				&--en {
+					font-size: 1.3rem;
+				}
+				&--jp {
+					font-size: 1.0rem;
+				}
+			}
+		}
+	}
+
+	&__button {
+		padding-bottom: 2.0rem;
+		display: flex;
+		gap: 0 2.0rem;
+		@include var.mq-max(970px) {
+			display: none;
+		}
+
+		&-inner {
+			min-width: 9.6rem;
+			padding: 1.0rem 1.0rem .4rem;
+			border-radius: 0 0 7px 7px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+
+			&--blog {
+				background: var.$color-gray;
+				gap: 8px 0;
+			}
+			&--contact {
+				background: var.$color-green;
+				gap: 4px 0;
+			}
+
+			&-icon {
+				width: 5.2rem;
+				height: 5.2rem;
+				background-color: #FFF;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				&-img {
+					width: 2.7rem;
+					display: block;
+				}
+			}
+
+			&-text {
+				color: #FFF;
+				font-size: 1.1rem;
+				font-weight: bold;
+				text-align: center;
+			}
+		}
+	}
+
+	&__burger {
+		margin: 0;
+		display: none;
+		align-items: center;
+		cursor: pointer;
+		position: absolute;
+		right: 5%;
+		@include var.mq-max(970px) {
+			display: flex;
+		}
+
+		&-inner {
+			width: 22px;
+			height: 2px;
+			margin: 10px 0;
+			background-color: var.$color-letter;
+			border-radius: 15vw;
+			transition: all .4s ease;
+			position: relative;
+
+			&::before {
+				width: 22px;
+				height: 2px;
+				content: '';
+				background-color: var.$color-letter;
+				border-radius: 15vh;
+				position: absolute;
+				top: -8px;
+				left: 0;
+				transition: all .4s ease;
+			}
+			&::after {
+				width: 22px;
+				height: 2px;
+				content: '';
+				background-color: var.$color-letter;
+				border-radius: 15vh;
+				position: absolute;
+				top: 8px;
+				left: 0;
+				transition: all .4s ease;
+			}
+
+			&.is-open {
+				width: 23px;
+				height: 23px;
+				background-color: transparent;
+
+				&::before {
+					width: 23px;
+					height: 2px;
+					content: '';
+					background-color: var.$color-letter;
+					border-radius: 15vw;
+					position: absolute;
+					top: 10px;
+					transform: rotate(-45deg);
+					transition: all .4s ease;
+				}
+				&::after {
+					width: 23px;
+					height: 2px;
+					content: '';
+					background-color: var.$color-letter;
+					border-radius: 15vw;
+					position: absolute;
+					top: 10px;
+					transform: rotate(45deg);
+					transition: all .4s ease;
+				}
+			}
+		}
+	}
+}
+
+.l-spmenu {
+	width: 100%;
+	height: calc(100vh - 8.0rem);
+	height: calc(100dvh - 8.0rem);
+	background-color: var.$color-main;
+	position: fixed;
+	top: 8.0rem;
+	left: 0;
+	z-index: 9;
+	display: none;
+	@include var.mq-max(600px) {
+		height: calc(100vh - 7.0rem);
+		height: calc(100dvh - 7.0rem);
+		top: 7.0rem;
+	}
+
+	&__list {
+		&-item {
+			padding: 2.2rem 1.2rem;
+			border-bottom: 1px solid #E2D7D7;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px 0;
+			cursor: pointer;
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 6px 0;
+			}
+
+			&-text {
+				font-weight: bold;
+				letter-spacing: .2em;
+
+				&--en {
+					font-size: 1.3rem;
+				}
+				&--jp {
+					font-size: 1.0rem;
+				}
+			}
+		}
+	}
+
+	&__sns {
+		margin: 2.4rem auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0 5.6rem;
+
+		&-icon {
+			width: 3.3rem;
+
+			&-img {
+				width: 100%;
+				display: block;
+			}
+		}
+	}
+}

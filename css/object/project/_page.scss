@@ -1,0 +1,13 @@
+@use "../../foundation/var";
+
+.p-page {
+	padding: 7.6rem 4.6rem;
+	background-color: #FFF;
+	box-shadow: 0 3px 6px #00000029;
+	@include var.mq-max(800px) {
+		padding: 7.6rem 4.6rem 0;
+	}
+	@include var.mq-max(600px) {
+		padding: 3.6rem 2.4rem 0;
+	}
+}

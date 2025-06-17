@@ -1,0 +1,164 @@
+@use "../foundation/var";
+
+.l-footer {
+	padding: 4.6rem 3.2rem 3.4rem;
+	position: relative;
+	@include var.mq-max(970px) {
+		padding: 4.6rem 3.2rem 8.6rem;
+	}
+
+	&__bg {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		&--pink {
+			background-color: #F48585;
+			opacity: .26;
+			clip-path: polygon(22% 0, 54% 17%, 94% 0, 100% 8%, 100% 100%, 0 100%, 0 8%);
+		}
+		&--gray {
+			background-color: #9B9B9B;
+			clip-path: polygon(24% 10%, 75% 0, 100% 10%, 100% 100%, 0 100%, 0 6%);
+		}
+	}
+
+	&__inner {
+		padding-top: 4.0rem;
+		position: relative;
+		z-index: 2;
+
+		&-contact {
+			margin-bottom: 5.4rem;
+			text-align: center;
+
+			&-button {
+				&-inner {
+					padding: .8rem 5.8rem .8rem 5.4rem;
+					background-color: #FFF;
+					font-size: 1.3rem;
+					font-weight: bold;
+					text-align: center;
+					display: block;
+					position: relative;
+					transition: opacity .3s ease-out;
+					&:hover {
+						opacity: .8;
+					}
+					&::before {
+						content: '';
+						width: 16px;
+						height: 16px;
+						background-color: #000;
+						border-radius: 50%;
+						position: absolute;
+						top: 50%;
+						right: 10%;
+						transform: translateY(-50%);
+					}
+					&::after {
+						content: '';
+						width: 6px;
+						height: 6px;
+						border-top: 2px solid #FFF;
+						border-right: 2px solid #FFF;
+						position: absolute;
+						top: 50%;
+						right: calc(10% + 6px);
+						transform: translateY(-50%) rotate(45deg);
+					}
+
+					&-marker {
+						padding: 0 .2rem;
+						background: linear-gradient(transparent 70%, #FFE51C 0%);
+					}
+				}
+			}
+		}
+
+		&-company {
+			margin-bottom: 1.0rem;
+			text-align: center;
+			@include var.mq-max(600px) {
+				margin-bottom: 3.0rem;
+			}
+
+			&-logo {
+				width: fit-content;
+				margin: 0 auto 4.2rem;
+				display: block;
+
+				&-img {
+					width: 10.8rem;
+					display: block;
+				}
+			}
+
+			&-name {
+				margin-bottom: .4rem;
+				color: #FFF;
+				font-size: 1.3rem;
+				font-weight: bold;
+				letter-spacing: .2em;
+			}
+
+			&-address {
+				color: #FFF;
+				font-size: 1.3rem;
+				letter-spacing: .2em;
+				.u-spbr {
+					display: none;
+					@include var.mq-max(600px) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&-sns {
+			margin-bottom: 1.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0 2.2rem;
+			@include var.mq-max(600px) {
+				margin-bottom: 3.0rem;
+			}
+
+			&-icon {
+				padding: 10px;
+				background-color: #FFF;
+				border-radius: 50%;
+
+				&-img {
+					width: 22px;
+					display: block;
+				}
+			}
+		}
+
+		&-privacy {
+			margin-bottom: 4.0rem;
+			text-align: center;
+
+			&-link {
+				color: #FFF;
+				font-size: 1.0rem;
+				letter-spacing: .3em;
+				text-decoration: underline;
+			}
+		}
+
+		&-copyright {
+			letter-spacing: .4em;
+			text-align: center;
+
+			&-text {
+				color: #FFF;
+				font-size: 1.0rem;
+				letter-spacing: .2em;
+			}
+		}
+	}
+}

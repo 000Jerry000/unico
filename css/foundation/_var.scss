@@ -1,0 +1,24 @@
+@mixin mq-max($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+@mixin mq-min($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
+
+$color-main: #F0F3F5;
+$color-letter: #333;
+$color-gray: #5D5D5D;
+$color-darkgray: #4F5357;
+$color-lightgray: #E4E4E4;
+$color-green: #9DC6C0;
+$color-yellow: #FFE51C;
+$color-pink: #DE8080;
+$color-lightpink: #F48585;
+$color-anchor: #00AEE0;
+$content-width: 1280px;
+$inner-top-content-width: 960px;
+$inner-page-content-width: 1100px;

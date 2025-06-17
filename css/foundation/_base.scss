@@ -1,0 +1,79 @@
+@use "var";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0 auto;
+	background-color: var.$color-main;
+	color: var.$color-letter;
+	font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+	letter-spacing: .1em;
+	line-height: 1.5;
+	position: relative;
+}
+
+// For page and single
+.p-single__wrap-content-body, .p-page__content {
+	h2 {
+		margin: 3.0rem 0 2.4rem;
+		font-size: 2.0rem;
+		font-weight: bold;
+	}
+
+	h3 {
+		margin: 2.4rem 0 2.0rem;
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	h4 {
+		margin: 2.0rem 0 1.8rem;
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+
+	p {
+		margin-bottom: 1.8rem;
+	}
+
+	img {
+		margin-bottom: 1.8rem;
+	}
+
+	a {
+		color: var.$color-anchor;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	ol {
+		margin-bottom: 1.8rem;
+		list-style: decimal inside;
+
+		li {
+			padding: .3rem 1.6rem .3rem 0;
+		}
+	}
+
+	ul {
+		margin-bottom: 1.8rem;
+		list-style: disc inside;
+
+		li {
+			padding: .3rem 1.6rem .3rem 0;
+		}
+	}
+
+	pre {
+		white-space: pre-wrap;
+	}
+}

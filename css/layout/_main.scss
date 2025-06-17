@@ -1,0 +1,40 @@
+@use "../foundation/var";
+
+.l-main {
+	max-width: var.$content-width;
+	margin: 0 auto;
+	padding: 0 .8rem;
+
+	&--single {
+		background-color: #FFF;
+		box-shadow: 0 0 0 100vmax #FFF;
+		clip-path: inset(0 -100vmax -100vmax);
+	}
+	&--archive {
+		background-color: #FFF;
+		box-shadow: 0 0 0 100vmax #FFF;
+		clip-path: inset(0 -100vmax -100vmax);
+	}
+
+	&__section {
+		margin: 0 auto 4.8rem;
+		padding: 4.8rem 0;
+
+		&--top {
+			max-width: var.$inner-top-content-width;
+		}
+		&--page {
+			margin-top: -3.0rem;
+			max-width: var.$inner-page-content-width;
+			@include var.mq-max(600px) {
+				margin-top: -1.5rem;
+			}
+		}
+		&--single {
+			max-width: var.$inner-page-content-width;
+		}
+		&--archive {
+			max-width: var.$inner-page-content-width;
+		}
+	}
+}

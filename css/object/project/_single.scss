@@ -1,0 +1,129 @@
+@use "../../foundation/var";
+
+.p-single {
+	padding: 7.6rem 4.6rem;
+	@include var.mq-max(800px) {
+		padding: 7.6rem 4.6rem 0;
+	}
+	@include var.mq-max(600px) {
+		padding: 3.6rem 2.4rem 0;
+	}
+
+	&__wrap {
+		display: flex;
+		gap: 3.6rem;
+		@include var.mq-max(800px) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&-content {
+			width: 100%;
+
+			&-date {
+				margin-bottom: 2.0rem;
+				font-size: 1.2rem;
+				font-weight: bold;
+				@include var.mq-max(600px) {
+					margin-bottom: 1.0rem;
+				}
+			}
+
+			&-tax {
+				margin-bottom: 2.4rem;
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 1.2rem 3.2rem;
+				@include var.mq-max(600px) {
+					margin-bottom: 1.5rem;
+				}
+
+				&-category {
+					color: #FFF;
+					&-link {
+						margin-right: 1.2rem;
+						padding: .2rem 2.4rem;
+						font-size: 1.2rem;
+						font-weight: bold;
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
+
+				&-tag {
+					@include var.mq-max(600px) {
+						display: none;
+					}
+
+					a {
+						margin-right: 1.2rem;
+						padding: 0 0 .2rem .6rem;
+						font-size: .8rem;
+						font-weight: bold;
+						position: relative;
+
+						&::before {
+							content: '#';
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+				}
+			}
+
+			&-title {
+				margin-bottom: 2.8rem;
+				padding: 0 .6rem 1.6rem;
+				border-bottom: 1px solid #707070;
+				@include var.mq-max(600px) {
+					margin-bottom: 2.0rem;
+					padding: 0 .6rem .6rem;
+				}
+
+				&-text {
+					font-size: 2.5rem;
+					font-weight: bold;
+				}
+
+				&-tag {
+					display: none;
+					@include var.mq-max(600px) {
+						display: block;
+					}
+
+					a {
+						margin-right: 1.2rem;
+						padding: 0 0 .2rem .6rem;
+						font-size: .8rem;
+						font-weight: bold;
+						position: relative;
+
+						&::before {
+							content: '#';
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+				}
+			}
+
+			&-img {
+				width: 100%;
+				margin-bottom: 3.0rem;
+
+				&-inner {
+					width: 100%;
+					padding-top: 56.25%;
+				}
+			}
+
+			&-body {
+				margin-bottom: 6.0rem;
+			}
+		}
+	}
+}
